@@ -1,0 +1,18 @@
+dist: xenial
+services: docker
+
+env:
+  global:
+    secure: XjTn4ohi+595P0sIpNCgtG/po677WCO3xSHd6P56DpM/FomeRItvuIXm7jvzspLq8DOV+YmFHpsW8xOVpx54W+2BaA7SmFGFZnvRCnrcXRp8zSxeQpMdfVTimWUQVZJEjrAOx3H3RqVIpN9BCOwdK9WG+P3Ma+tbpjgUXeoRMUtzQp1iiNV6Z1HbGobhxdAnuylFwIfINGcLsqowj3e9usowVMKYSDlYfEK0PUKxYXtK0h4bE9WbbBZqKVXLYh14NVINXRSBGUfxWNS/CqgEc9XnLnVA0/lMDRC8XGkgJQI9KmEh94oIAcQ5VWUbJzXeFXkkz116u4IcT9eDzrXCiH3D1LNhiBHxv48vToAxtx2h99HRimbOFINTjobNioFZ8md5dkyEZ/MmOco76fPzwfGxKHMYmvAaTG8cPzLLxYreAcC3wT1VrI3IwQEedNs/Po8vmc1tir9qcYHfg07cO9GHdYm3arWAm1UXW7lprUvw34XfAXvFNOOoVkikBf9dPHL1EadhV7A22qw/wPEPHHMDT51E/vR/VIddrboECGk62cULww6hI2QCoIjXwF6RA06G2zfdtpqCZBeY5wJoigyqIv9lMTevc2yQPQkWYau9D44NtaXou6mxXjleKvFqEa7aZbdxZuxt//t4T7vH26wbNCQlXGIlLC8g0HQM6vc=
+
+before_script:
+- docker login -u vnoel -p $DOCKERHUB_PASSWORD
+
+script:
+- docker build -t uppmaboss .
+
+after_script:
+- docker tag uppmaboss:latest vnoel/uppmaboss:latest
+- docker push vnoel/uppmaboss:latest
+- docker logout
+
