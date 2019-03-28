@@ -4,7 +4,7 @@ MAINTAINER Vincent Noel <contact@vincent-noel.fr>
 USER root
 
 RUN conda config --add channels vincent-noel && \
-    conda install --no-update-deps -y uppmaboss matplotlib && \
+    conda install --no-update-deps -y uppmaboss pymaboss matplotlib && \
     conda clean -y --all && rm -rf /opt/conda/pkgs
 
 RUN mkdir -p /notebook/usecases/UpPMaBoSS
