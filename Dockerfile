@@ -9,7 +9,7 @@ RUN conda config --add channels vincent-noel && \
 
 RUN mkdir -p /notebook/usecases/UpPMaBoSS
 ADD CellFate* /notebook/usecases/UpPMaBoSS/
-ADD TimeStepDependancy.ipynb /notebook/usecases/UpPMaBoSS/
+ADD TimeStepDependency.ipynb /notebook/usecases/UpPMaBoSS/
 RUN chown -R user:user /notebook
 
 USER user
