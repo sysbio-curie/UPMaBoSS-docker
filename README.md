@@ -14,7 +14,7 @@ docker run -p 8888:8888 -d sysbiocurie/uppmaboss
 ## Use with conda
 To build the conda environment : 
 ```
-conda create -n umb -c colomoto -c potassco pymaboss notebook seaborn
+conda create -n umb -c colomoto -c potassco pymaboss ginsim-python notebook seaborn
 ```
 
 To activate it : 
