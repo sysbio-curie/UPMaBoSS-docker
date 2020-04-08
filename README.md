@@ -1,13 +1,13 @@
-# UpPMaBoSS-docker
-Docker image to simulate UpPMaBoSS models
+# UPMaBoSS-docker
+Docker image to simulate UPMaBoSS models
 
 ## Use with binder
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sysbio-curie/UpPMaBoSS-docker/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sysbio-curie/UPMaBoSS-docker/master)
 
 ## Use with docker
 To run this notebook using the built docker image, run : 
 ```
-docker run -p 8888:8888 -d sysbiocurie/uppmaboss
+docker run -p 8888:8888 -d sysbiocurie/upmaboss
 ```
 
 
