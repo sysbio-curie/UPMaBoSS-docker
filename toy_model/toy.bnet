@@ -1,0 +1,6 @@
+Bi, Bi
+R,  0
+T,  R | B
+A,  (A | R) & !C & !B
+B,  T & !A
+C,  (C | B | Bi) & !A & !T
