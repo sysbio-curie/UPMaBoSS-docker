@@ -1,0 +1,40 @@
+node Bi
+{
+	rate_up = $u_Bi;
+	rate_down = $d_Bi;
+}
+
+node R
+{
+	rate_up = 0;
+	rate_down = 1;
+}
+
+node T
+{
+ logic = (R | B);
+ rate_up = @logic ? 1.0 : 0.0;
+  	rate_down = @logic ? 0.0 : 1.0;
+}
+
+node A
+{
+     logic = (A|R) & (!C) & (!B);
+     rate_up = @logic ? 1.0 : 0.0;
+     rate_down = @logic ? 0.0 : 1.0;
+}
+
+node B
+{
+     logic = (T & (!A));
+     rate_up = @logic ? 1.0 : 0.0;
+     rate_down = @logic ? 0.0 : 1.0;
+}
+
+node C
+{
+	logic = (C | B | Bi) & !A & !T;
+	rate_up = @logic ? 1.0 : 0.0;
+  	rate_down = @logic ? 0.0 : 1.0;
+ }
+
