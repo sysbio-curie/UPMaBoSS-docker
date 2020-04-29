@@ -1,40 +1,35 @@
-node Bi
+node I
 {
-	rate_up = $u_Bi;
-	rate_down = $d_Bi;
-}
-
-node R
-{
-	rate_up = 0;
-	rate_down = 1;
-}
-
-node T
-{
- logic = (R | B);
- rate_up = @logic ? 1.0 : 0.0;
-  	rate_down = @logic ? 0.0 : 1.0;
+rate_up = 0.0;
+rate_down = 0.0;
 }
 
 node A
 {
-     logic = (A|R) & (!C) & (!B);
-     rate_up = @logic ? 1.0 : 0.0;
-     rate_down = @logic ? 0.0 : 1.0;
+rate_up =  I ? 1.0 : 0.0;
+rate_down =  0.0;
 }
 
-node B
+node L
 {
-     logic = (T & (!A));
-     rate_up = @logic ? 1.0 : 0.0;
-     rate_down = @logic ? 0.0 : 1.0;
+rate_up =  A ? 1.0 : 0.0;
+rate_down =  0.0;
+}
+node R
+{
+rate_up =  $innerOn ? L : $outerL;
+rate_down =  0.0;
+}
+node T1
+{
+rate_up = (A & (!T2)) ? 1.0 :0.0;
+rate_down = 0.0;
+}
+node T2
+{
+rate_up = (R & (!A)) ? 1.0 : 0.0;
+rate_down = 0.0;
 }
 
-node C
-{
-	logic = (C | B | Bi) & !A & !T;
-	rate_up = @logic ? 1.0 : 0.0;
-  	rate_down = @logic ? 0.0 : 1.0;
- }
+
 
