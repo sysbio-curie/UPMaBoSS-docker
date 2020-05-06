@@ -3,10 +3,10 @@ MAINTAINER Vincent Noel <contact@vincent-noel.fr>
 
 USER root
 
-RUN mkdir -p /notebook/UPMaBoSS/Cell_fate
-ADD CellFate* /notebook/UPMaBoSS/Cell_fate
-ADD TimeStepDependency.ipynb /notebook/UPMaBoSS/Cell_fate
-ADD ToyModelUP /notebook/UPMaBoSS
+RUN mkdir -p /notebook/UPMaBoSS/
+COPY CellFate /notebook/UPMaBoSS/CellFate
+COPY ToyModelUP /notebook/UPMaBoSS/ToyModel
+
 RUN chown -R user:user /notebook/UPMaBoSS
 
 USER user
