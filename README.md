@@ -2,7 +2,7 @@
 Docker image to simulate UPMaBoSS models
 
 ## Use with binder
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sysbio-curie/UPMaBoSS-docker/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/sysbio-curie/UPMaBoSS-docker/master?filepath=UPMaBoSS)
 
 ## Use with docker
 To run this notebook using the built docker image, run : 
